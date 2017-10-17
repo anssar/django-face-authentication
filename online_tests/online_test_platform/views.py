@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from face_authentication.decorators import FARequired
 
-# Create your views here.
+@FARequired
+def main(request):
+    return render(request, 'main.html')
