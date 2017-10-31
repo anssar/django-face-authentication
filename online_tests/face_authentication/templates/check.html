@@ -45,7 +45,7 @@
       ctx.drawImage(vidos, 0, 0);
       vidos.play();
 
-      finalImage = canvas.toDataURL("image/png");
+      finalImage = canvas.toDataURL("image/jpeg");
       var img = document.getElementById("result")
       img.src = finalImage;
       var sendButton = document.getElementById("sendButton");
@@ -54,7 +54,13 @@
 
     // SEND IMAGE
     function sendPhoto() {
-      finalImage = canvas.toDataURL("image/png");
+
+      var loading = document.getElementById("loading");
+      var loadgif = document.createElement("img");
+      loadgif.src = "https://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif";
+      loading.appendChild(loadgif);
+
+      finalImage = canvas.toDataURL("image/jpeg");
       data = JSON.stringify({
         image: document.getElementById("result").src
       });
@@ -63,6 +69,9 @@
       }, function(res) {
         if (res.result == 'OK') {
           location.reload();
+        } else {
+          loading.removeChild(loadgif);
+          alert("Отказано в доступе");
         }
       })
     }
@@ -71,6 +80,8 @@
 
 <body style="padding: 0; margin: 0; background-color: #FAFAFA;">
   <div align="center">
+    <div align="center" id="loading">
+    </div>
     <div align="center" style="width: 430px; padding: 10px; margin: 0; color: #090909; font-size:18px;">
       Смотрите в камеру и сдейте фотографию.
     </div>
