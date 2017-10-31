@@ -2,3 +2,7 @@
 django==1.11.5
 Pillow==4.3.0
 olefile==0.44
+dlib==19.4.8
+scipy==0.18.1
+numpy==1.11.1
+skimage==0.12.3
