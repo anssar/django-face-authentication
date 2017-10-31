@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from face_authentication.decorators import FARequired
 
 @FARequired
@@ -11,4 +11,4 @@ def logout(request):
         del request.session['fatoken']
     except:
         pass
-    return render(request, 'main.html')
+    return redirect('/')
