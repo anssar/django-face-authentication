@@ -3,7 +3,7 @@
 ## Установка
 1) В файле settings.py добавить приложение face_authentication в INSTALLED_APPS
 2) Настроить media (см. документацию django)
-3) В консоле выполнить
+3) В консоли выполнить
    manage.py createsuperuser
    manage.py collectstatic
    manage.py makemigrations
