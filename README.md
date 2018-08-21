@@ -1,4 +1,6 @@
-# django-face-authentication
+# django-face-authentication (2017)
+
+Django Framework для аутентификации через разпознавание лица
 
 ## Установка
 1) В файле settings.py добавить приложение face_authentication в INSTALLED_APPS
